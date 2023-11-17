@@ -1,0 +1,66 @@
+.HomePage, .SchedulePage, .SeasonTicketsPage, .WorkoutPage, .LoginSignupPage, .AccountPage, .StaffPage {
+
+  h1 {
+    margin: 0;
+    padding: 0.3em 0;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-weight: 900;
+  }
+
+  h2 {
+    font-size: 1.5em;
+    text-align: center;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  //color: rgb(255, 0, 215);
+
+  h3 {
+    font-size: 1em;
+    margin: 0;
+    text-transform: uppercase;
+    padding: 0.2em 0;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    line-height: 1.2em;
+
+  }
+  h4 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+  }
+  h5 {
+    font-size: 1.2em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0.9em 0 0 0;
+  }
+
+  h6 {
+    font-size: 1.15em;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin: 0.7em 0 0 0;
+
+    span {
+      color: #d011aa;
+      font-size: 1.25em;
+      font-weight: 1000;
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0.2em 0;
+    letter-spacing: 0.1em;
+    text-align: justify;
+    text-indent: 2.5em;
+  }
+
+}

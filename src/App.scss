@@ -1,0 +1,26 @@
+.APP {
+  display: grid;
+  grid-template-columns: 18em auto;
+  height: 100vh;
+
+  .Nav {
+
+  }
+
+  .Content {
+    overflow-y: scroll;
+    padding: 0.5em 1.5em;
+
+  }
+  .Content::before {
+    content: "";
+    background-image: url("./images/BG1.jpg");
+    opacity: 0.1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+  }
+}

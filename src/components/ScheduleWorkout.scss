@@ -1,0 +1,21 @@
+.SW {
+  width: 100%;
+  border-radius: 0.5em;
+  scale: 0.95 0.9;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 0.1em 0.2em #ec4d34;
+
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: repeat(4, auto);
+
+  span {
+    box-sizing: border-box;
+    border: 0.1em solid #ec4d34;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+  }
+}
