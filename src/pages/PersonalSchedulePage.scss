@@ -1,0 +1,55 @@
+.PersonalSchedulePage {
+
+  .PersonalSchedule {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 2em repeat(7, auto);
+    grid-template-rows: auto repeat(18, auto);
+    border: 0.2em solid;
+    border-radius: 0.5em;
+
+    h2 {
+      box-sizing: border-box;
+      margin: 0;
+      border-left: solid 0.15em rgba(#ec4d34, 0.4);
+    }
+
+    h3 {
+      writing-mode: vertical-lr;
+      font-size: 1.5em;
+      text-align: center;
+      transform: rotate(180deg);
+    }
+
+    div {
+      border-top: solid 0.15em rgba(#ec4d34, 0.4);
+      border-left: solid 0.15em rgba(#ec4d34, 0.4);
+    }
+
+    .SW {
+      width: 100%;
+      border-radius: 0.5em;
+      scale: 0.95 0.9;
+      background-color: rgba(255, 255, 255, 0.8);
+      box-shadow: 0 0 0.1em 0.2em #ec4d34;
+
+      box-sizing: border-box;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+
+      span {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        //box-sizing: border-box;
+        //border: 0.1em solid #ec4d34;
+        //margin: 0;
+        padding: 0;
+        font-size: 1.2em;
+      }
+    }
+  }
+
+}

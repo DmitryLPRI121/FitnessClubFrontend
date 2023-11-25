@@ -1,65 +1,104 @@
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
+import {  } from 'react-router-dom';
 import "./Navbar.scss"
 
 export function NavBar() {
+    const location = useLocation();
+    const endpoint = location.pathname.split('/')[1]; // получаем endpoint
+
     const navigate = useNavigate();
     return (
         <>
-            {localStorage.getItem('Authorized')? (
+
+            { (endpoint === "Login" || endpoint === "Signup") ? null : (
+                localStorage.getItem('Authorized') ? (
                     <div className="Account">
-                        <Link to="/Account" style={{ textDecoration: 'none', color: '#ec4d34'}}>
+{/*                        <Link to="/Account" style={{ textDecoration: 'none', color: '#ec4d34'}}>
                             <div className="InAccount">
                                 <div>Учетная запись</div>
                             </div>
-                        </Link>
+                        </Link>*/}
                         <button className="Logout" onClick={() => {
                             localStorage.removeItem('Authorized');
                             navigate('/Home');
                             window.location.reload();
                         }}>⊠</button>
                     </div>
-            ) : (
-                <Link to="/Login" style={{ textDecoration: 'none', color: '#ec4d34'}}>
-                    <div className="Account" style={{border: 'solid .2em #ec4d34', borderRadius: '0.5em', backgroundColor: 'rgba(255, 255, 255, 1', padding: '0.4em 0.5em'}}>
-                        Авторизация
-                    </div>
-                </Link>
+                ) : (
+                    <Link to="/Login" style={{ textDecoration: 'none', color: '#ec4d34'}}>
+                        <div className="Account" style={{border: 'solid .2em #ec4d34', borderRadius: '0.5em', backgroundColor: 'rgba(255, 255, 255, 1', padding: '0.4em 0.5em'}}>
+                            Авторизация
+                        </div>
+                    </Link>
+                )
             )}
+
 
             <nav>
                 <h2>REФорма</h2>
-                <div className="linkList">
-                    <Link to="/Home">
-                        <div className="LinkButton">
-                            🏠 Главная
-                        </div>
-                    </Link>
-                    <Link to="/Stocks">
+                {localStorage.getItem('Authorized')? (
+                    <div className="linkList">
+                        <Link to="/Home">
+                            <div className="LinkButton">
+                                🏠 Главная
+                            </div>
+                        </Link>
+                        {/*                    <Link to="/Stocks">
                         <div className="LinkButton">
                             📢 Акции
                         </div>
-                    </Link>
-                    <Link to="/Schedule">
-                        <div className="LinkButton">
-                            📅 Расписание
-                        </div>
-                    </Link>
-                    <Link to="/SeasonTickets">
-                        <div className="LinkButton">
-                            🎟️ Абонементы
-                        </div>
-                    </Link>
-                    <Link to="/Staff">
-                        <div className="LinkButton">
-                            👤 Тренеры
-                        </div>
-                    </Link>
-                    <Link to="/About">
-                        <div className="LinkButton">
-                            📄 О нас
-                        </div>
-                    </Link>
-                </div>
+                    </Link>*/}
+                        <Link to="/PersonalSchedule">
+                            <div className="LinkButton">
+                                ⌚ Персональные тренировки
+                            </div>
+                        </Link>
+                        <Link to="/StaticSchedule">
+                            <div className="LinkButton">
+                                📅 Расписание
+                            </div>
+                        </Link>
+                        <Link to="/MySeasonTicket">
+                            <div className="LinkButton">
+                                ★ Мой абонемент
+                            </div>
+                        </Link>
+                        <Link to="/Staff">
+                            <div className="LinkButton">
+                                👤 Тренеры
+                            </div>
+                        </Link>
+                        <Link to="/SeasonTickets">
+                            <div className="LinkButton">
+                                🎟️ Абонементы
+                            </div>
+                        </Link>
+                    </div>
+                ) : (
+                    <div className="linkList">
+                        <Link to="/Home">
+                            <div className="LinkButton">
+                                🏠 Главная
+                            </div>
+                        </Link>
+                        <Link to="/StaticSchedule">
+                            <div className="LinkButton">
+                                📅 Расписание
+                            </div>
+                        </Link>
+                        <Link to="/SeasonTickets">
+                            <div className="LinkButton">
+                                🎟️ Абонементы
+                            </div>
+                        </Link>
+                        <Link to="/Staff">
+                            <div className="LinkButton">
+                                👤 Тренеры
+                            </div>
+                        </Link>
+                    </div>
+                )}
+
                 <div className="AboutList">
                     <hr/>
                     <h3>

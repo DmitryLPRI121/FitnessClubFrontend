@@ -1,16 +1,19 @@
 import React from 'react';
 import {Navigate, Route, Routes} from "react-router-dom";
 import {HomePage} from "./pages/HomePage";
-import {SchedulePage} from "./pages/SchedulePage";
+import {StaticSchedulePage} from "./pages/StaticSchedulePage";
 import "./App.scss"
 import {NavBar} from "./components/Navbar";
-import {StocksPage} from "./pages/StocksPage";
 import {SeasonTicketsPage} from "./pages/SeasonTicketsPage";
 import {StaffPage} from "./pages/StaffPage";
-import {AboutPage} from "./pages/AboutPage";
-import {WorkoutPage} from "./pages/WorkoutPage";
-import {LoginSignupPage} from "./pages/LoginSignupPage";
 import {AccountPage} from "./pages/Account";
+import {MySeasonTicketPage} from "./pages/MySeasonTicketPage";
+import {SWorkoutPage} from "./pages/SWorkoutPage";
+import {STPurchasePage} from "./pages/STPurchasePage";
+import {LoginPage} from "./pages/LoginPage";
+import {SignupPage} from "./pages/SignupPage";
+import {PersonalSchedulePage} from "./pages/PersonalSchedulePage";
+import {PWorkoutPage} from "./pages/PWorkoutPage";
 
 function App() {
   return (
@@ -22,16 +25,17 @@ function App() {
               <Routes>
                   <Route path="/" element={<Navigate to="/Home" replace />} />
                   <Route path="/Home" element={<HomePage />} />
-                  <Route path="/Stocks" element={<StocksPage />} />
-                  <Route path="/Schedule" element={<SchedulePage />} />
+                  <Route path="/StaticSchedule" element={<StaticSchedulePage />} />
+                  <Route path="/PersonalSchedule" element={<PersonalSchedulePage />} />
                   <Route path="/SeasonTickets" element={<SeasonTicketsPage />} />
+                  <Route path="/SeasonTicket/Payment" element={<STPurchasePage />} />
+                  <Route path="/MySeasonTicket" element={<MySeasonTicketPage /> } />
                   <Route path="/Staff" element={<StaffPage />} />
-                  <Route path="/About" element={<AboutPage />} />
-
-
-                  <Route path="/Workout/:WorkoutId" element={<WorkoutPage />} />
+                  <Route path="/SWorkout/:Id" element={<SWorkoutPage />} />
+                  <Route path="/PWorkout/:Id" element={<PWorkoutPage />} />
                   <Route path="/Account" element={<AccountPage />} />
-                  <Route path="/Login" element={<LoginSignupPage />} />
+                  <Route path="/Login" element={<LoginPage />} />
+                  <Route path="/Signup" element={<SignupPage />} />
                   <Route path="*" element={<Navigate to="/Home" replace />} />
               </Routes>
           </div>

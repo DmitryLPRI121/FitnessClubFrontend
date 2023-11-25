@@ -1,0 +1,40 @@
+.PWorkoutPage {
+
+  .WorkoutCard {
+    position: relative;
+    padding: 1em;
+    border: solid 0.25em #ec4d34;
+    border-radius: 0.5em;
+    margin: 0 auto;
+    width: 25em;
+    height: 26em;
+
+    h5 {
+      font-size: 1.5em;
+    }
+
+    p {
+      font-size: 1.4em;
+      padding: 0.5em 0 0 0;
+      margin: 0;
+      text-align: center;
+      text-indent: 0;
+    }
+
+    button {
+      cursor: pointer;
+      height: 2.5em;
+      position: absolute;
+      bottom: 1em;
+      right: 0;
+      left: 0;
+      margin: 0 1em;
+      font-size: 1.2em;
+      border-radius: 0.5em;
+      border: solid #ec4d34 0.2em;
+      font-family: "Gotham Pro", sans-serif;
+      font-weight: 800;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+}

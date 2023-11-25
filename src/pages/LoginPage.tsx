@@ -1,10 +1,10 @@
 import { Helmet } from "react-helmet";
 import "./PagesStyle.scss"
-import "./LoginSignupPage.scss"
-import {useNavigate} from "react-router-dom";
+import "./LoginSignupStyles.scss"
+import {Link, useNavigate} from "react-router-dom";
 
 
-const LoginSignupPage = () => {
+const LoginPage = () => {
     const navigate = useNavigate();
     return (
         <>
@@ -12,7 +12,7 @@ const LoginSignupPage = () => {
                 <meta charSet="utf-8" />
                 <title>Вход в аккаунт | REФорма</title>
             </Helmet>
-            <main className="LoginSignupPage">
+            <main className="LoginPage LoginSignupStyles">
                 <form>
                     <legend>Авторизация</legend>
                     <fieldset>
@@ -22,10 +22,15 @@ const LoginSignupPage = () => {
                         <input type="password"/>
 
                         <input onClick={() => {
-                            localStorage.setItem('Authorized', '1');
+                            localStorage.setItem('Authorized', '57');
                             navigate('/Home');
                             window.location.reload();
                         }} style={{width: '100%', marginTop: '2em'}} type="submit"/>
+                        <p>
+                            Нет аккаунта?
+                            <Link to="/Signup"> Создать учетную запись</Link>
+                            .
+                        </p>
                     </fieldset>
                 </form>
             </main>
@@ -33,4 +38,4 @@ const LoginSignupPage = () => {
     )
 }
 
-export { LoginSignupPage };
+export { LoginPage };

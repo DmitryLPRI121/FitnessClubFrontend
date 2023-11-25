@@ -1,6 +1,13 @@
 .SeasonTicketsPage {
   width: 100%;
 
+  h5 {
+
+    span {
+      color: blueviolet;
+     font-size: 1.8em;
+    }
+  }
 
   .suggestedSeasonTickets {
     max-width: 80em;
@@ -18,7 +25,7 @@
       border-radius: 1em;
       max-width: 24em;
       width: 100%;
-      height: 30em;
+      height: 34em;
       background-color: white;
     }
     > div:first-child {
@@ -28,78 +35,20 @@
       scale: 0.95;
     }
 
-    .CustomSTArrangeBtn {
-      cursor: pointer;
-      height: 2.5em;
-      position: absolute;
-      bottom: 1em;
-      right: 0;
-      left: 0;
-      margin: 0 1em;
-      font-size: 1.2em;
-      border-radius: 0.5em;
-      border: solid #ec4d34 0.2em;
-      font-family: "Gotham Pro", sans-serif;
-      font-weight: 800;
-      transition: all 0.2s ease-in-out;
+    li {
+      font-size: 0.85em;
     }
-  }
-
-  .customSeasonTicket {
-    position: relative;
-    width: 20em;
-    height: 28em;
-    margin: 0 auto;
-    border-radius: 0.8em;
-    background-color: rgba(white, 0.8);
-    border: 0.2em #ec4d34 solid;
-    padding: 0.75em 1em;
 
     select {
-      color: black;
-      width: 100%;
-      font-size: 1.2em;
-      border: #ec4d34 solid 0.2em;
-      border-radius: 0.2em;
-      font-weight: 800;
-      text-transform: uppercase;
-      text-align: center;
-      padding: 0.5em 0;
-    }
-
-    .selectWorkoutCSTicket {
-      margin: 0.5em 0;
-      user-select: none;
-      font-size: 1.4em;
-      width: 100%;
-      height: 12em;
-      overflow-y: scroll;
-      border-radius: 0.2em;
-
-      div {
-        margin: 0.2em 0;
-        padding-bottom: 0.2em;
-        border-radius: 0.3em;
-        background-color: rgba(#ec4d34, 0.15);
-
-        span {
-          font-size: 0.8em;
-        };
-      }
-    }
-
-    .CustomSTWOSBtn {
-      width: 100%;
-      font-size: 1.2em;
-      border-radius: 0.2em;
-      margin: 0;
-      border: solid #ec4d34 0.2em;
       font-family: "Gotham Pro", sans-serif;
-      font-weight: 800;
+      font-size: 1.4em;
+      padding: 0.4em 0.8em 0.4em 0;
+      width: 15em;
+      margin: 0.2em 0.8em 0 0.8em;
+      letter-spacing: 0.1em;
     }
 
-    .CustomSTArrangeBtn {
-      cursor: pointer;
+    .ArrangeBtn {
       height: 2.5em;
       position: absolute;
       bottom: 1em;
@@ -113,14 +62,17 @@
       font-weight: 800;
       transition: all 0.2s ease-in-out;
     }
-    .CSTABA {
-      background-color: #faebd8;
-    }
-    .CSTABA:hover {
+    .ArrangeBtnA {
+      cursor: pointer;
+      color: black;
       background-color: white;
     }
-    .CSTABI {
-      background-color: rgba(0, 0, 0, 0.1);
+    .ArrangeBtnD {
+      cursor: auto;
+      color: rgba(#ec4d34, 0.4);
+      background-color: rgba(0, 0, 0, 0.2);
     }
+
   }
+
 }

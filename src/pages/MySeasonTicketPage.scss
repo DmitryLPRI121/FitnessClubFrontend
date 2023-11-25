@@ -1,0 +1,24 @@
+.MySeasonTicketPage {
+
+  .MyST {
+    margin: 3em auto;
+    border: #ec4d34 solid 0.2em;
+    border-radius: 1em;
+    width: 25em;
+    height: auto;
+    padding-bottom: 1em;
+    background-color: white;
+
+    li {
+      font-size: 0.85em;
+    }
+
+    h5 {
+
+      span {
+        color: blueviolet;
+        font-size: 1.5em;
+      }
+    }
+  }
+}
