@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet";
 import "./PagesStyle.scss"
 import "./StaticSchedulePage.scss"
-import {ScheduleWorkout} from "../components/ScheduleWorkout";
 import React from "react";
 import {Link} from "react-router-dom";
 
@@ -87,7 +86,6 @@ const StaticSchedulePage = () => {
                         </React.Fragment>
                     ))}
                 </div>
-
                 <p>
                     Создайте свой уникальный фитнес-календарь, выбирая оптимальные тренировки и удобные временные интервалы. Наше гибкое расписание создано, чтобы соответствовать вашему образу жизни и помочь вам достигнуть ваших фитнес-целей в наиболее удобный для вас способ!
                 </p>

@@ -10,9 +10,6 @@ const HomePage = () => {
                 <title>Главная | REФорма</title>
             </Helmet>
             <main className="HomePage">
-{/*                <div className="MainImage">
-                    <h2>«REФорма – Фитнес, который приводит к переменам».</h2>
-                </div>*/}
                 <h1>Добро пожаловать в «REФорму»</h1>
                 <h2>«REФорма – Фитнес, который приводит к переменам».</h2>
                 <p>

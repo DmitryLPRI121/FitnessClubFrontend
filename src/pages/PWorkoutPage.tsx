@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import "./PagesStyle.scss"
 import "./PWorkoutPage.scss"
-import {useEffect} from "react";
+import axios from "axios";
 
 interface IWorkout {
     Id: number;
@@ -52,7 +52,7 @@ const PWorkoutPage = () => {
             'Content-Type': 'application/json'
         };
         console.log(data)
-        // await axios.post(`localhost:5000/SeasonTickets`, data, {headers});
+        // await axios.post(`localhost:5000/PWorkoutSignUp`, data, {headers});
         return;
     }
 

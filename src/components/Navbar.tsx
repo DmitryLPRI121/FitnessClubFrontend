@@ -4,20 +4,14 @@ import "./Navbar.scss"
 
 export function NavBar() {
     const location = useLocation();
-    const endpoint = location.pathname.split('/')[1]; // получаем endpoint
-
+    const endpoint = location.pathname.split('/')[1];
     const navigate = useNavigate();
+
     return (
         <>
-
-            { (endpoint === "Login" || endpoint === "Signup") ? null : (
+            {(endpoint === "Login" || endpoint === "Signup") ? null : (
                 localStorage.getItem('Authorized') ? (
                     <div className="Account">
-{/*                        <Link to="/Account" style={{ textDecoration: 'none', color: '#ec4d34'}}>
-                            <div className="InAccount">
-                                <div>Учетная запись</div>
-                            </div>
-                        </Link>*/}
                         <button className="Logout" onClick={() => {
                             localStorage.removeItem('Authorized');
                             navigate('/Home');
@@ -33,7 +27,6 @@ export function NavBar() {
                 )
             )}
 
-
             <nav>
                 <h2>REФорма</h2>
                 {localStorage.getItem('Authorized')? (
@@ -43,11 +36,6 @@ export function NavBar() {
                                 🏠 Главная
                             </div>
                         </Link>
-                        {/*                    <Link to="/Stocks">
-                        <div className="LinkButton">
-                            📢 Акции
-                        </div>
-                    </Link>*/}
                         <Link to="/PersonalSchedule">
                             <div className="LinkButton">
                                 ⌚ Персональные тренировки

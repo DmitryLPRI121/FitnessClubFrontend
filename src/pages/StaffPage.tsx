@@ -88,14 +88,6 @@ const StaffPage = () => {
             <main className="StaffPage">
                 <h1>Тренеры</h1>
                 <div className="StaffGallery">
-{/*                    {Staff.map((S) => (
-                        <div className="StaffDesc">
-                            <img src={require(S.Photo)} />
-                            <h2>{S.Name}</h2>
-                            <h3>{S.Specialization}</h3>
-                            <p>{S.ShortDescription}</p>
-                        </div>
-                    ))}*/}
                     <div className="StaffDesc">
                         <img src={require('../images/Staff1.jpg')} />
                         <h2>{Staff[0].Name}</h2>

@@ -3,41 +3,46 @@ import "./PagesStyle.scss"
 import "./LoginSignupStyles.scss"
 import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
+import axios from "axios";
 
+interface ISignup {
+    LastName: string;
+    FirstName: string;
+    MiddleName: string;
+    Email: string;
+    PhoneNumber: string;
+    Password1: string;
+    Password2: string;
+}
 
 const SignupPage = () => {
     const navigate = useNavigate();
 
+    const [lastName, setLastName] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [middleName, setMiddleName] = useState('');
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [password1, setPassword1] = useState('');
+    const [password2, setPassword2] = useState('');
 
-    const validateEmail = (email: string) => {
-        // Регулярное выражение для валидации электронной почты
-        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-        return emailRegex.test(email);
-    };
-
-    const validatePassword = (password: string) => {
-        // Регулярное выражение для валидации пароля
-        // Пароль должен содержать как минимум 8 символов, включая 1 заглавную букву, 1 строчную букву и 1 цифру
-        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
-        return passwordRegex.test(password);
-    };
-
-    const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setEmail(event.target.value);
-        if (!validateEmail(event.target.value)) {
-            console.log('Неверный формат электронной почты');
+    async function Signup() {
+        const data:ISignup = {
+            LastName: lastName,
+            FirstName: firstName,
+            MiddleName: middleName,
+            Email: email,
+            PhoneNumber: phoneNumber,
+            Password1: password1,
+            Password2: password2,
         }
-    };
-
-    const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(event.target.value);
-        if (!validatePassword(event.target.value)) {
-            console.log('Пароль должен содержать как минимум 8 символов, включая 1 заглавную букву, 1 строчную букву и 1 цифру');
-        }
-    };
-
+        const headers = {
+            'Content-Type': 'application/json'
+        };
+        console.log(data)
+        // await axios.post(`localhost:5000/Signup`, data, {headers});
+        return;
+    }
 
     return (
         <>
@@ -50,23 +55,24 @@ const SignupPage = () => {
                     <legend>Создание учетной записи</legend>
                     <fieldset>
                         <h3>Фамилия</h3>
-                        <input type="text" required/>
+                        <input type="text" required onChange={(event) => setLastName(event.target.value)}/>
                         <h3>Имя</h3>
-                        <input type="text" required/>
+                        <input type="text" required onChange={(event) => setFirstName(event.target.value)}/>
                         <h3>Отчество</h3>
-                        <input type="text" required/>
+                        <input type="text" required onChange={(event) => setMiddleName(event.target.value)}/>
                         <h3>Эл. почта</h3>
-                        <input type="email" required value={email} onChange={handleEmailChange}/>
+                        <input type="email" required onChange={(event) => setEmail(event.target.value)}/>
                         <h3>Номер телефона</h3>
-                        <input type="tel"/>
+                        <input type="tel" onChange={(event) => setPhoneNumber(event.target.value)}/>
                         <h3>Пароль</h3>
-                        <input type="password" required value={password} onChange={handlePasswordChange}/>
+                        <input type="password" required onChange={(event) => setPassword1(event.target.value)}/>
                         <h3>Повторите пароль</h3>
-                        <input type="password" required/>
-                        <input onClick={() => {
-                            localStorage.setItem('Authorized', '1');
+                        <input type="password" required onChange={(event) => setPassword2(event.target.value)}/>
+                        <input onClick={async () => {
+                            localStorage.setItem('Authorized', '57');
                             navigate('/Home');
                             window.location.reload();
+                            // if (password1 == password2) await Signup();
                         }} style={{width: '100%', marginTop: '2em'}} type="submit"/>
                         <p>
                             Есть аккаунт?

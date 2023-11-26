@@ -31,8 +31,6 @@ const STPurchasePage = () => {
                 <h5>Включает в себя групповые занятия</h5>
                 <h5 style={{fontSize: '1.2em'}}>Длительность абонемента полгода</h5>
                 <h5 style={{fontSize: '1.2em'}}>Стоимость 5000 р.</h5>
-
-                {/*<p></p>*/}
                 <h2>Платежные данные</h2>
                 <div className="PaymentCard">
                     <h5>Номер карты</h5>

@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import "./PagesStyle.scss"
 import "./SeasonTicketsPage.scss"
 import {Link} from "react-router-dom";
+import axios from "axios";
 
 interface IPCount {
     Id: number;
@@ -22,7 +23,7 @@ interface IDuration {
     Id: number;
     Title: string;
     Time: number;
-    Price: number; // Добавляем новое свойство Price
+    Price: number;
 }
 
 const Duration:IDuration[] = [
@@ -107,13 +108,12 @@ const SeasonTicketsPage = () => {
             Price: price,
         };
         localStorage.setItem('SeasonTicket', JSON.stringify(data));
-/*        const headers = {
-            'Content-Type': 'application/json'
-        };*/
 /*
-        console.log(data)
+        const headers = {
+            'Content-Type': 'application/json'
+        };
+        await axios.post(`localhost:5000/SeasonTickets`, data, {headers});
 */
-        // await axios.post(`localhost:5000/SeasonTickets`, data, {headers});
         return;
     }
 
@@ -128,7 +128,6 @@ const SeasonTicketsPage = () => {
                 <h2>
                     Выберите ваш путь к здоровью и красоте с нашими абонементами
                 </h2>
-                {/*<h2>Готовые абонементы</h2>*/}
                 <p style={{margin: '1.5em 0'}}>
                     Мы предлагаем разнообразные абонементы, чтобы удовлетворить потребности каждого нашего клиента. Независимо от вашей цели - строить мышцы, терять вес, улучшать физическую форму или просто поддерживать активный образ жизни - у нас есть идеальный вариант для вас.
                 </p>
@@ -218,62 +217,6 @@ const SeasonTicketsPage = () => {
                         </Link>
                     </div>
                 </div>
-{/*                <h2 style={{marginTop: '3em'}}>Настраиваемый абонемент</h2>
-                <p>
-                    Мы также верим, что в нашем фитнес-клубе ваш фитнес-путь должен быть уникальным и соответствовать вашим потребностям и целям. Поэтому мы предоставляем вам возможность настроить свой собственный абонемент, который полностью соответствует вашим ожиданиям.
-                </p>
-                <h2 style={{fontSize: '1.35em'}}>Выбери свой фитнес-путь</h2>
-                <div className="customSeasonTicket" style={{backgroundImage: 'linear-gradient(to right bottom, rgba(255, 0, 215, 0.1), rgba(255, 255, 255, 1))'}}>
-                    {!is_CSTicket_WOut_Select ? (<>
-                        <h4>Персональный</h4> Фиолетовый
-                        <h5>Выберите тип</h5>
-                        <select value={typeCSTicket} onChange={handleSelectChange} className="selectTypeCSTicket">
-                            {TypeSeasonTicket.map((TST) => (
-                                <option value={'typeOption'+ TST.Id} onClick={() => setCSTicketTypePrice(parseInt(TST.Description))}>{TST.Title}</option>
-                                ))}
-                            <option value="option1" onClick={() => setCSTicketTypePrice(1250)}>Тренажерный зал</option> Синий
-                            <option value="option2" onClick={() => setCSTicketTypePrice(1750)}>Групповой</option> Зеленый
-                            <option value="option3" onClick={() => setCSTicketTypePrice(4500)}>С тренером</option> Синий
-                        </select>
-
-                        <h5>Выберите Занятия:</h5>
-                        <select>
-                            <option selected hidden value="view" disabled>Просмотреть</option>
-                            {selectedOptions.map((selectedOption) => (
-                                <option key={selectedOption.id} value={"view" + selectedOption.id} disabled>{selectedOption.label}</option>
-                            ))}
-                        </select>
-                        <button onClick={() => setIs_CSTicket_WOut_Select(true)} className="CustomSTWOSBtn">Выбрать</button>
-
-                        <h6>Добавочная цена: <span>{additionalPrice.toLocaleString('ru-RU')}</span> р.</h6>
-                        <h6>Итоговая цена: <span>{CSTicketPrice.toLocaleString('ru-RU')}</span> р.</h6>
-
-                        <button type="submit" disabled={selectedOptions.length === 0} className={`CustomSTArrangeBtn ${selectedOptions.length !== 0? 'CSTABA' : 'CSTABI' }`}>
-                            Оформить
-                        </button>
-                    </>) : (<>
-                        <h5>Выберите Занятия:</h5>
-                        <div className="selectWorkoutCSTicket">
-                            {options.map((option) => (
-                                <div key={option.id}>
-                                    <label>
-                                        <input
-                                            type="checkbox"
-                                            checked={selectedOptions.includes(option)}
-                                            onChange={() => handleCheckboxChange(option)}
-                                        />
-                                        {option.label} <span> +{option.price} р.</span>
-                                    </label>
-                                </div>
-                            ))}
-                        </div>
-                        <button onClick={() => setIs_CSTicket_WOut_Select(false)} className="CustomSTWOSBtn">Применить</button>
-                    </>)}
-
-                </div>
-                <p>
-                    У нас нет жестких рамок, потому что ваша индивидуальность заслуживает специального подхода.
-                </p>*/}
             </main>
         </>
     )

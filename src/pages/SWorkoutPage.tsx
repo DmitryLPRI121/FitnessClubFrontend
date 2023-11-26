@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet";
 import "./PagesStyle.scss"
 import "./SWorkoutPage.scss"
-import {useEffect} from "react";
 
 interface IWorkout {
     Id: number;
@@ -23,7 +22,6 @@ const Workout:IWorkout = {
     StartTime: new Date("2023-11-16T09:00:00"),
     EndTime: new Date("2023-11-16T09:45:00"),
 }
-
 
 const SWorkoutPage = () => {
 
@@ -52,7 +50,6 @@ const SWorkoutPage = () => {
                     <p>{Workout.Place}</p>
                     <h5>Тренер:</h5>
                     <p>{Workout.Coach}</p>
-                    {/*<button>Записаться</button>*/}
                 </div>
             </main>
         </>
