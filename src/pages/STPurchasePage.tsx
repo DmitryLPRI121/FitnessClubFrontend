@@ -7,14 +7,16 @@ const STPurchasePage = () => {
 
     async function BuySeasonTicket() {
         const seasonTicket = localStorage.getItem('SeasonTicket');
-        let data;
-        if (seasonTicket !== null)
-            data = JSON.parse(seasonTicket);
+        let newData;
+        if (seasonTicket !== null) {
+            let data = JSON.parse(seasonTicket);
+            newData = {...data, Status: "Paid"};
+        }
         const headers = {
             'Content-Type': 'application/json'
         };
-        console.log(data)
-        // await axios.post(`localhost:5000/ArrangeSeasonTicket`, data, {headers});
+        console.log(newData)
+        // await axios.put(`localhost:5000/ArrangeSeasonTicket`, newData, {headers});
         return;
     }
 

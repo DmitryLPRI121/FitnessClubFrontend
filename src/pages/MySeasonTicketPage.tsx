@@ -41,7 +41,7 @@ const MySeasonTicketPage = () => {
         };
 
         fetchData();
-    })
+    }, [])
 
     return (
         <>
